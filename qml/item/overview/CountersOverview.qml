@@ -67,10 +67,22 @@ Item
         width: parent.width - (x * 2)
         height: Theme.iconSizeSmall
 
+        Label
+        {
+            id: lbltitle
+            anchors { right: btnfavorites.left; top: parent.top; bottom: parent.bottom; rightMargin: Theme.paddingLarge }
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignRight
+            font.pixelSize: Theme.fontSizeSmall
+            truncationMode: TruncationMode.Fade
+            color: Theme.highlightColor
+            text: countersgrid.title
+        }
+
         IconButton
         {
             id: btnfavorites
-            anchors { right: lbltitle.left; top: parent.top; bottom: parent.bottom; rightMargin: Theme.paddingMedium }
+            anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
             width: parent.height
 
             icon {
@@ -84,38 +96,25 @@ Item
             }
         }
 
-        Label
-        {
-            id: lbltitle
-            anchors { right: parent.right; top: parent.top; bottom: parent.bottom }
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignRight
-            font.pixelSize: Theme.fontSizeSmall
-            truncationMode: TruncationMode.Fade
-            color: Theme.highlightColor
-            text: countersgrid.title
-        }
     }
 
-    SilicaFlickable
+    Item
     {
-        readonly property int visibleItems: 3
+        readonly property int visibleItems: 4
         readonly property real cellSize: (parent.width / visibleItems) - (row.spacing * (visibleItems - 1))
         readonly property real calculatedHeight: cellSize + (Theme.fontSizeExtraSmall * 4)
 
         id: flickable
         anchors { top: header.bottom; topMargin: Theme.paddingMedium }
-        flickableDirection: Flickable.HorizontalFlick
         x: Theme.paddingSmall
         width: parent.width - (x * 2)
         height: parent.height
-        contentWidth: row.width
-        clip: true
 
         Row
         {
             id: row
             spacing: Theme.paddingSmall
+            anchors.horizontalCenter: parent.horizontalCenter
 
             Repeater
             {

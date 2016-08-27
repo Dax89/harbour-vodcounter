@@ -17,6 +17,7 @@ Item
             if((code < 0) && (pageStack.currentPage.isOverviewPage !== true)) { // Fallback to OverviewPage in case of NetworkError
                 pageStack.completeAnimation();
                 pageStack.replace(Qt.resolvedUrl("../pages/main/OverviewPage.qml"), { "context": context });
+                commited();
             }
 
             console.log("ERROR: " + description + " (" + code + ")");

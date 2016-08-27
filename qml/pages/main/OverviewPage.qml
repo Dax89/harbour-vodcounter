@@ -23,6 +23,7 @@ Page
         if(currentProfile.data) {
             balanceoverview.balance = currentProfile.data.balance;
             balanceoverview.currency = currentProfile.data.currency;
+            balanceoverview.plan = currentProfile.data.plan || "";
         }
 
         if(currentProfile.counters)
@@ -39,6 +40,8 @@ Page
 
             currentProfile.data.balance = result.balance;
             currentProfile.data.currency = result.currency;
+            currentProfile.data.plan = result.tariffmodel;
+            currentProfile.data.payment = result.payment;
             currentProfile.expiration_date = result.expiration_date;
 
             balanceoverview.actionText = result.action.caption;
@@ -66,11 +69,12 @@ Page
     }
 
     onStatusChanged: {
-        if((status !== PageStatus.Active) || !currentProfile)
+        if((status !== PageStatus.Active) || !currentProfile || canNavigateForward)
             return;
 
         overviewpage.update();
         context.load();
+        pageStack.pushAttached(Qt.resolvedUrl("ProfilePage.qml"), { "context": context });
     }
 
     SilicaFlickable
@@ -82,18 +86,6 @@ Page
         {
             MenuItem
             {
-                text: qsTr("About")
-                onClicked: pageStack.push(Qt.resolvedUrl("../about/AboutPage.qml"), { "context": context });
-            }
-
-            MenuItem
-            {
-                text: qsTr("Profiles")
-                onClicked: pageStack.push(Qt.resolvedUrl("ProfilePage.qml"), { "context": context });
-            }
-
-            MenuItem
-            {
                 text: qsTr("Refresh")
                 onClicked: context.load()
             }
@@ -103,7 +95,6 @@ Page
         {
             id: content
             width: parent.width
-            spacing: Theme.paddingMedium
 
             PageHeader { id: header }
             SectionHeader { id: balanceheader }

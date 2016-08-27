@@ -16,8 +16,8 @@ Summary:    VodCounter
 Version:    0.5
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
-URL:        http://example.org/
+License:    GPL3
+URL:        https://github.com/Dax89/harbour-vodcounter
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-vodcounter.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -29,8 +29,7 @@ BuildRequires:  pkgconfig(libcrypto)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my Sailfish OS Application
-
+An unofficial Vodafone™ Italy client for SailfishOS
 
 %prep
 %setup -q -n %{name}-%{version}

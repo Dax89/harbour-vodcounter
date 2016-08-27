@@ -29,19 +29,18 @@ Item
         anchors { top: lbltitle.bottom; bottom: lblunit.top }
         width: parent.width
         height: parent.width
-        borderWidth: Theme.paddingMedium
+        borderWidth: Theme.paddingSmall
         value: counterValue / maxCounterValue
         inAlternateCycle: true
 
         Column
         {
-            anchors { centerIn: parent }
-            width: parent.width - (progresscircle.borderWidth * 2) - Theme.paddingSmall
+            anchors { fill: parent; margins: progresscircle.borderWidth * 2 }
 
             Label
             {
                 width: parent.width
-                font { pixelSize: Theme.fontSizeExtraLarge; bold: true }
+                font { pixelSize: Theme.fontSizeLarge; bold: true }
                 horizontalAlignment: Text.AlignHCenter
                 elide: Text.ElideRight
                 color: Theme.highlightColor
@@ -51,7 +50,7 @@ Item
             Rectangle
             {
                 height: 1
-                x: Theme.paddingLarge
+                x: Theme.paddingMedium
                 width: parent.width - (x * 2)
                 color: Theme.secondaryHighlightColor
             }
@@ -59,7 +58,7 @@ Item
             Label
             {
                 width: parent.width
-                font.pixelSize: Theme.fontSizeSmall
+                font.pixelSize: Theme.fontSizeExtraSmall
                 horizontalAlignment: Text.AlignHCenter
                 text: qsTr("of %1").arg(maxCounterValue)
                 elide: Text.ElideRight

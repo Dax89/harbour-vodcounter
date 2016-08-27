@@ -24,7 +24,6 @@ SOURCES += src/harbour-vodcounter.cpp \
 OTHER_FILES += qml/harbour-vodcounter.qml \
     qml/cover/CoverPage.qml \
     qml/cover/*.png \
-    rpm/harbour-vodcounter.changes.in \
     rpm/harbour-vodcounter.spec \
     rpm/harbour-vodcounter.yaml \
     translations/*.ts \
@@ -64,7 +63,8 @@ DISTFILES += \
     qml/pages/about/AboutPage.qml \
     qml/pages/about/DevelopersPage.qml \
     qml/components/CollaboratorsLabel.qml \
-    qml/components/ProfileLabel.qml
+    qml/components/ProfileLabel.qml \
+    rpm/harbour-vodcounter.changes
 
 HEADERS += \
     src/apirequest.h \

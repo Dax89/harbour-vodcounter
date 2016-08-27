@@ -39,7 +39,11 @@
 <context>
     <name>BalanceOverview</name>
     <message>
-        <source>SIM Expiration: %1</source>
+        <source>Plan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SIM Expiration</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -123,14 +127,6 @@ data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Profiles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Hi %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,6 +151,10 @@ data</source>
     </message>
     <message>
         <source>Complete name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

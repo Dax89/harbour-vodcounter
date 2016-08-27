@@ -27,7 +27,10 @@ Item
         var obj = { "type": VodHelper.fixCase(type),
                     "msidsn": msidsn,
                     "expiration_date": expirationdate,
-                    "data": { "balance": 0, "currency": "" } };
+                    "data": { "balance": 0,
+                              "currency": "",
+                              "plan": "",
+                              "payment": "" } };
 
         return obj;
     }

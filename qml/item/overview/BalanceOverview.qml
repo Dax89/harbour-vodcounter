@@ -6,6 +6,7 @@ Item
 {
     property string balance
     property string currency
+    property string plan
     property string expirationDate
     property string actionUrl
 
@@ -30,8 +31,15 @@ Item
 
         VodLabel
         {
+            id: lblplan
+            receivedText: "<font color='" + Theme.highlightColor + "'>" + qsTr("Plan") + ":</font> " + plan
+            font.pixelSize: Theme.fontSizeExtraSmall
+        }
+
+        VodLabel
+        {
             id: lblexpiration
-            receivedText: qsTr("SIM Expiration: %1").arg(expirationDate)
+            receivedText: "<font color='" + Theme.highlightColor + "'>" + qsTr("SIM Expiration") + ":</font> " + expirationDate
             font.pixelSize: Theme.fontSizeExtraSmall
         }
     }
