@@ -37,7 +37,7 @@ Item
     {
         readonly property string appId: rot13("ZlIbqnsbar")
         readonly property string appPlatform: "Android"
-        readonly property string appVersion: "7.2.0"
+        readonly property string appVersion: "8.2.1"
 
         readonly property string osName: "Android"
         readonly property string osVersion: "4.4"
